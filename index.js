@@ -109,7 +109,12 @@ function useSyncWithSessionStorage({ storageKey, initialState }) {
   });
 }
 
-module.exports = {
-  useSyncWithLocalStorage,
-  useSyncWithSessionStorage,
-};
+export { useSyncWithLocalStorage, useSyncWithSessionStorage };
+
+// For CommonJS compatibility
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    useSyncWithLocalStorage,
+    useSyncWithSessionStorage,
+  };
+}
