@@ -1,4 +1,6 @@
-React JS custom hook for working with Browser storages (localStorage,sessionStorage)
+# use-sync-browser-storage
+
+A lightweight React hook library for seamlessly synchronizing state with browser storage (localStorage and sessionStorage).
 
 ## Installation
 
@@ -6,37 +8,60 @@ React JS custom hook for working with Browser storages (localStorage,sessionStor
 npm install use-sync-browser-storage
 ```
 
+## Features
+
+- 🔄 Automatic synchronization with browser storage
+- 💾 Support for both localStorage and sessionStorage
+- 🪝 Simple hook-based API
+- 📦 Zero dependencies
+
 ## Available Hooks
 
-useSyncWithLocalStorage: A hook for syncing with localStorage.
-useSyncWithSessionStorage: A hook for syncing with sessionStorage
+- `useSyncWithLocalStorage`: Syncs state with localStorage (persists after browser restart)
+- `useSyncWithSessionStorage`: Syncs state with sessionStorage (cleared after browser restart)
 
 ## Usage
 
-useSyncWithLocalStorage
-
-Example usage:
+### `useSyncWithLocalStorage`
 
 ```jsx
 import { useSyncWithLocalStorage } from "use-sync-browser-storage";
 
-function Coutner() {
-  const [count, updateCount] = useSyncWithLocalStorage({
+function Counter() {
+  const [count, setCount] = useSyncWithLocalStorage({
     storageKey: "counter",
     initialState: 0,
   });
 
   return (
     <div>
-      <div>{count}</div>
-      <button onClick={() => updateCount(count + 1)}>increment </button>
+      <div>Count: {count}</div>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
     </div>
   );
 }
 
-export default Coutner;
+export default Counter;
 ```
 
-## License
+### `useSyncWithSessionStorage`
 
-This project is licensed under the MIT License.
+```jsx
+import { useSyncWithSessionStorage } from "use-sync-browser-storage";
+
+function UserPreferences() {
+  const [theme, setTheme] = useSyncWithSessionStorage({
+    storageKey: "theme",
+    initialState: "light",
+  });
+
+  return (
+    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+      Toggle Theme
+    </button>
+  );
+}
+```
+
