@@ -1,6 +1,6 @@
 {
   "name": "use-sync-browser-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight React hook library for synchronizing state with browser storage",
   "main": "index.js",
   "types": "index.d.ts",
