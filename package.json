@@ -1,21 +1,34 @@
 {
   "name": "use-sync-browser-storage",
   "version": "1.0.3",
-  "description": "",
+  "description": "A lightweight React hook library for synchronizing state with browser storage",
   "main": "index.js",
+  "types": "index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "import": "./index.js",
-      "require": "./index.js"
+      "types": "./index.d.ts"
     }
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gev_d",
   "license": "ISC",
   "peerDependencies": {
     "react": "^18.2.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "localStorage",
+    "sessionStorage",
+    "state-management"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davtyangevorg/use-sync-browser-storage/tree/main"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
 }
